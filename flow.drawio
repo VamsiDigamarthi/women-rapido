@@ -1,0 +1,229 @@
+<mxfile host="65bd71144e">
+    <diagram id="3LUYerm5z5HAH5ddmvJK" name="Page-1">
+        <mxGraphModel dx="1829" dy="1706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="9" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" source="2" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="280" y="20"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" source="2" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="530" y="20"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="&lt;h3&gt;&lt;b&gt;Send-OTP&lt;/b&gt;&lt;/h3&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="-30" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;h1&gt;&lt;font color=&quot;#c52020&quot; face=&quot;Lucida Console&quot;&gt;Authentication Features&lt;/font&gt;&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+                    <mxGeometry x="225" y="-170" width="370" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;h1&gt;&lt;font color=&quot;#ddd0d0&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 1, Sending Otp&lt;/font&gt;&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Lucida Console;fontColor=#c52020;" parent="1" vertex="1">
+                    <mxGeometry x="-175" y="-105" width="490" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;h4&gt;Success&lt;/h4&gt;" style="whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="50" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" source="7" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Otp send Failed" style="whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="50" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;200&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;OTP sent successfully!&quot;&lt;/span&gt; });&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="-205" y="95" width="490" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;500&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: rgb(206, 145, 120);&quot;&gt;&quot;Sending OTP failed due to an external server error&quot;&lt;/span&gt;})&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="95" width="680" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="&lt;h1&gt;2, Verify- otp&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="85" y="190" width="230" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="&lt;h3&gt;1, res&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal; color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal; color: rgb(220, 220, 170);&quot;&gt;status&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal; color: rgb(181, 206, 168);&quot;&gt;400&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal; color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal; color: rgb(220, 220, 170);&quot;&gt;json&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal;&quot;&gt;({ &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal; color: rgb(156, 220, 254);&quot;&gt;message&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal; color: rgb(206, 145, 120);&quot;&gt;&quot;Please send mobile number..!&quot;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; font-weight: normal;&quot;&gt; });&lt;/span&gt;&lt;/h3&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="250" width="560" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="&lt;h2 style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;2, res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;400&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;Please send otp ..!&quot;&lt;/span&gt; });&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="125" y="295" width="490" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="&lt;h3&gt;3,&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; color: rgb(156, 220, 254);&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; color: rgb(220, 220, 170);&quot;&gt;status&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; color: rgb(181, 206, 168);&quot;&gt;401&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; color: rgb(220, 220, 170);&quot;&gt;json&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;({ &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; color: rgb(156, 220, 254);&quot;&gt;message&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; color: rgb(206, 145, 120);&quot;&gt;&quot;User not found in database&quot;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt; });&lt;/span&gt;&lt;/h3&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Lucida Console;fontColor=#ddd0d0;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="350" width="530" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="&lt;h2&gt;&lt;font face=&quot;Helvetica&quot;&gt;4,&lt;span style=&quot;font-size: 14px; color: rgb(156, 220, 254);&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(220, 220, 170);&quot;&gt;status&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-size: 14px;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(181, 206, 168);&quot;&gt;401&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-size: 14px;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(220, 220, 170);&quot;&gt;json&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-size: 14px;&quot;&gt;({ &lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(156, 220, 254);&quot;&gt;message&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-size: 14px;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(206, 145, 120);&quot;&gt;&quot;Invalid OTP&quot;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(31, 31, 31); color: rgb(204, 204, 204); font-size: 14px;&quot;&gt; });&lt;/span&gt;&lt;/font&gt;&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Lucida Console;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="400" width="360" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;401&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;User does not exist&quot;&lt;/span&gt; });&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="485" width="460" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="&lt;h3&gt;Verify-otp&lt;/h3&gt;" style="whiteSpace=wrap;html=1;sketch=1;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="560" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" source="88" target="87" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" source="88" target="92" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="&lt;h3&gt;Verification-success&lt;/h3&gt;" style="whiteSpace=wrap;html=1;sketch=1;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="660" width="210" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" source="89" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="480" y="620" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="89" value="&lt;h3&gt;Verifycation-falid&lt;/h3&gt;" style="whiteSpace=wrap;html=1;sketch=1;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="660" width="220" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="&lt;h3&gt;Sending-Token&lt;/h3&gt;" style="whiteSpace=wrap;html=1;sketch=1;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="770" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="&lt;h1&gt;3, Register User&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="85" y="890" width="220" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" value="&lt;h2&gt;Registor-user&lt;/h2&gt;" style="whiteSpace=wrap;html=1;sketch=1;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="375" y="950" width="210" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" source="97" target="95" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="&lt;h2&gt;Success&lt;/h2&gt;" style="whiteSpace=wrap;html=1;sketch=1;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="195" y="1120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" source="98" target="95" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="&lt;h2&gt;Failed&lt;/h2&gt;" style="whiteSpace=wrap;html=1;sketch=1;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="1120" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;200&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;token&lt;/span&gt; });&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="1210" width="270" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;500&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: rgb(206, 145, 120);&quot;&gt;&quot;Registration failed..!&quot;&lt;/span&gt;})&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Georgia;fontColor=#ddd0d0;" parent="1" vertex="1">
+                    <mxGeometry x="515" y="1210" width="460" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="125" width="20" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;401&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;Invalid OTP&quot;&lt;/span&gt; });&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="515" y="740" width="400" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;200&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;token&lt;/span&gt; });&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="85" y="850" width="270" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;400&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;User Already Exist ....!&quot;&lt;/span&gt; });&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="515" y="1240" width="500" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="&lt;h1&gt;Captain Features&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6F0000;fillColor=#a20025;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="315" y="1390" width="220" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="&lt;h2&gt;1, Change Duty&amp;nbsp;&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="1500" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="&lt;h3&gt;Method&amp;nbsp; PATCH&lt;/h3&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="1555" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="&lt;h3&gt;Path -- /captain/change-dutty&lt;/h3&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="1590" width="220" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="113" target="114">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="&lt;h2&gt;Change Dutty&lt;/h2&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="1670" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="&lt;h3&gt;Negation od dutty&lt;/h3&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="1810" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="&lt;h2&gt;&amp;nbsp;Just Hit The Api&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="425" y="1725" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="&lt;h2&gt;2,Order-List&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="1960" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="&lt;h3&gt;Method -- GET&lt;/h3&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="2010" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="&lt;h3&gt;Path -- /captain&lt;span style=&quot;color: rgb(206, 145, 120); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;/orders/:longitude/:latitude/:distance/:currentData&lt;/span&gt;&lt;/h3&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="2060" width="520" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="120" target="121">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="340" y="2220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="125" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="120" target="123">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="520" y="2210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="120" value="&lt;h2&gt;Orders&lt;/h2&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="365" y="2150" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="&lt;h3&gt;Success&amp;nbsp;&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="2270" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="123" target="127">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="132" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="123" target="128">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="123" target="129">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="123" target="130">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="&lt;h3&gt;failure&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="2270" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;res&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;200&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;(&lt;span style=&quot;color: #4fc1ff;&quot;&gt;orders&lt;/span&gt;);&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="115" y="2330" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="&lt;h3&gt;Invalid Token&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="2380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.416;entryY=0.035;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="128" target="136">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="&lt;h3&gt;Valid Token But User Delete&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="2380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="129" target="138">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="&lt;h3&gt;Con't Access&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="2380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="141" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="130" target="140">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="&lt;h3&gt;Internal Server Error&lt;/h3&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1120" y="2380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="135" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;401&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;Invalid JWT Token&quot;&lt;/span&gt; });&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="2460" width="420" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;404&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: #9cdcfe;&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;This User No More Available&quot;&lt;/span&gt; });&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="425" y="2520" width="490" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: #b5cea8;&quot;&gt;403&lt;/span&gt;)&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;json&lt;/span&gt;({&amp;nbsp;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: rgb(206, 145, 120);&quot;&gt;&quot;You can't access this feature because you are not a captain.&quot;&lt;/span&gt;,})&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="710" y="2580" width="740" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="140" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: rgb(220, 220, 170);&quot;&gt;status&lt;/span&gt;(&lt;span style=&quot;color: rgb(181, 206, 168);&quot;&gt;500&lt;/span&gt;)&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: rgb(220, 220, 170);&quot;&gt;json&lt;/span&gt;({ &lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;message&lt;/span&gt;: &lt;span style=&quot;color: rgb(206, 145, 120);&quot;&gt;&quot;All Orders Faield&quot;&lt;/span&gt;, &lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;error&lt;/span&gt;:&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;error&lt;/span&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;message&lt;/span&gt; });&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1070" y="2510" width="590" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
