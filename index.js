@@ -3,12 +3,15 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import http from "http";
+import { Server } from "socket.io";
 import "dotenv/config";
 import AuthRoute from "./Routes/AuthRoute.js";
 import errorHandler from "./Middlewares/errorHandle.js";
 import Captain from "./Routes/CaptaineRoute.js";
 import UserRoute from "./Routes/UserRoute.js";
 import DeveloperRoute from "./Routes/DeveloperRoute.js";
+import ChartRoute from "./Routes/ChatRoute.js";
+import MessageRoute from "./Routes/MessageRoute.js";
 
 const app = express();
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -35,7 +38,7 @@ app.use((req, res, next) => {
 app.use(errorHandler);
 
 const server = http.createServer(app);
-
+const io = new Server(server);
 mongoose
   .connect(`${process.env.MONGODB_URL}women_rapido`)
   .then(() =>
@@ -56,3 +59,33 @@ app.use("/captain", Captain);
 app.use("/user", UserRoute);
 
 app.use("/developer", DeveloperRoute);
+
+app.use("/chat", ChartRoute);
+
+app.use("/message", MessageRoute);
+
+let activeUsers = [];
+
+io.on("connection", (socket) => {
+  socket.on("new-user-add", (newUserId) => {
+    if (!activeUsers.some((user) => user.userId === newUserId)) {
+      activeUsers.push({ userId: newUserId, socketId: socket.id });
+    }
+    console.log(activeUsers);
+    io.emit("get-users", activeUsers);
+  });
+
+  socket.on("disconnect", () => {
+    activeUsers = activeUsers.filter((user) => user.socketId !== socket.id);
+    io.emit("get-users", activeUsers);
+  });
+
+  socket.on("send-message", (data) => {
+    const { receiverId } = data;
+    const user = activeUsers.find((user) => user.userId === receiverId);
+
+    if (user) {
+      io.to(user.socketId).emit("recieve-message", data);
+    }
+  });
+});
