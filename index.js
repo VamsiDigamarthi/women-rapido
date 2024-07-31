@@ -38,7 +38,11 @@ app.use((req, res, next) => {
 app.use(errorHandler);
 
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+  },
+});
 mongoose
   .connect(`${process.env.MONGODB_URL}women_rapido`)
   .then(() =>
@@ -67,6 +71,7 @@ app.use("/message", MessageRoute);
 let activeUsers = [];
 
 io.on("connection", (socket) => {
+  console.log("New user connected", socket.id);
   socket.on("new-user-add", (newUserId) => {
     if (!activeUsers.some((user) => user.userId === newUserId)) {
       activeUsers.push({ userId: newUserId, socketId: socket.id });
@@ -82,6 +87,7 @@ io.on("connection", (socket) => {
 
   socket.on("send-message", (data) => {
     const { receiverId } = data;
+    console.log(data);
     const user = activeUsers.find((user) => user.userId === receiverId);
 
     if (user) {

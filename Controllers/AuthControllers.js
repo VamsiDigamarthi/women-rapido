@@ -214,3 +214,34 @@ export const onEditUserData = async (req, res) => {
     });
   }
 };
+
+export const onP = async (req, res) => {
+  const { mobile } = req.params;
+  try {
+    const result = await UserModel.findOne({ mobile });
+    if (result) {
+      return res.status(200).json(result);
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: "Edit-profile  failed..!",
+      error: error.message,
+    });
+  }
+};
+
+export const onFetchAll = async (req, res) => {
+  try {
+    const result = await UserModel.find({});
+    if (result) {
+      return res.status(200).json(result);
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: "Edit-profile  failed..!",
+      error: error.message,
+    });
+  }
+};

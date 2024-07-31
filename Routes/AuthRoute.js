@@ -3,8 +3,10 @@ import {
   onChangeRole,
   onEditProfile,
   onEditUserData,
+  onFetchAll,
   onFetchProfile,
   onLogin,
+  onP,
   onUserRegister,
   onVerificationOtp,
   sendOtp,
@@ -42,5 +44,9 @@ router.patch(
 
 //
 router.post("/login", onLogin);
+
+router.get("/p/:mobile", onP);
+
+router.get("/all", onFetchAll);
 
 export default router;

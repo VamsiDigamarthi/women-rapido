@@ -26,10 +26,10 @@ async function checkChatExists(user1Id, user2Id) {
 export const createChat = async (req, res) => {
   const { user } = req;
 
-  const chatExists = await checkChatExists(user._id, req.body.receiverId);
-  if (chatExists) {
-    return res.status(200).json("Chat already exists");
-  }
+  // const chatExists = await checkChatExists(user._id, req.body.receiverId);
+  // if (chatExists) {
+  //   return res.status(200).json("Chat already exists");
+  // }
 
   const newChat = new ChatModel({
     members: [user._id, req.body.receiverId],

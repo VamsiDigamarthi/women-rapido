@@ -4,6 +4,7 @@ export const addMessage = async (req, res) => {
   const { user } = req;
 
   const { chatId, message } = req.body;
+  console.log(chatId);
   const newmessage = new MessageModel({
     chatId,
     senderId: user._id,
