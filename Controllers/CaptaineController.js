@@ -216,3 +216,24 @@ export const onCaptaineGiveRatingToRide = async (req, res) => {
     });
   }
 };
+
+export const onIsRideStartNaviage = async (req, res) => {
+  const { orderId } = req.params;
+  try {
+    const order = await OrderModel.findOne({ _id: orderId });
+
+    await OrderModel.findByIdAndUpdate(
+      { _id: orderId },
+      { $set: { onNaviagtionChange: !order.onNaviagtionChange } },
+      { new: true }
+    );
+
+    return res.status(201).json({ message: "navigation started successfully" });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: "onrideSratnavigation  failed..!",
+      error: error.message,
+    });
+  }
+};

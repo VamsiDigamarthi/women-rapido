@@ -6,6 +6,7 @@ import {
   onDuttyChange,
   onFetchAllCompletedOrders,
   onFetchAllOrders,
+  onIsRideStartNaviage,
   onOrderCompleted,
   onOrdersDeclaine,
   onUploadSecuritiesImages,
@@ -39,6 +40,14 @@ router.patch(
   CheckingUser,
   ensureCaptainRole,
   onAcceptOrder
+);
+
+router.patch(
+  "/isridestart-naviage/:orderId",
+  authenticateToken,
+  CheckingUser,
+  ensureCaptainRole,
+  onIsRideStartNaviage
 );
 
 router.patch(

@@ -97,6 +97,10 @@ const OrderSchema = new Schema(
     distance: { type: String },
     rideTime: { type: String },
     giveVehicleNumber: { type: Boolean, default: true },
+    onNaviagtionChange: {
+      type: Boolean,
+      default: false,
+    },
   }
   // { timestamps: true }
 );
