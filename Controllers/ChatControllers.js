@@ -2,19 +2,15 @@ import ChatModel from "../Modals/ChatModal.js";
 
 async function checkChatExists(user1Id, user2Id) {
   try {
-    // Query the Chat model to find if there's a chat containing both user IDs
     const chat = await ChatModel.findOne({
       members: {
         $all: [user1Id, user2Id],
       },
     });
 
-    // If chat exists, return true
     if (chat) {
-      // console.log("chat is presents");
       return true;
     } else {
-      // console.log("Chat doesn't exist");
       return false; // Chat doesn't exist
     }
   } catch (error) {
@@ -26,10 +22,10 @@ async function checkChatExists(user1Id, user2Id) {
 export const createChat = async (req, res) => {
   const { user } = req;
 
-  // const chatExists = await checkChatExists(user._id, req.body.receiverId);
-  // if (chatExists) {
-  //   return res.status(200).json("Chat already exists");
-  // }
+  const chatExists = await checkChatExists(user._id, req.body.receiverId);
+  if (chatExists) {
+    return res.status(200).json("Chat already exists");
+  }
 
   const newChat = new ChatModel({
     members: [user._id, req.body.receiverId],
@@ -39,7 +35,7 @@ export const createChat = async (req, res) => {
     const result = await newChat.save();
     res.status(200).json({ message: "Chat created successfully...!", result });
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json({ message: "chat creation failed..!", error });
   }
 };
 
