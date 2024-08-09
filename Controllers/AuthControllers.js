@@ -172,12 +172,15 @@ export const onLogin = async (req, res) => {
 
 export const onEditProfile = async (req, res) => {
   const { user } = req;
+  const { Name } = req.body;
   // const { name } = req.body;
+  // console.log(Name);
   const profilePic = req.file ? req.file.path : null;
+  // console.log(profilePic);
   try {
     await UserModel.findByIdAndUpdate(
       { _id: user._id },
-      { $set: { profilePic: profilePic } },
+      { $set: { profilePic: profilePic, name: Name } },
       { new: true }
     );
 
