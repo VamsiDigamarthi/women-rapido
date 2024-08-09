@@ -75,7 +75,7 @@ io.on("connection", (socket) => {
     if (!activeUsers.some((user) => user.userId === newUserId)) {
       activeUsers.push({ userId: newUserId, socketId: socket.id });
     }
-    console.log(activeUsers);
+    // console.log(activeUsers);
     io.emit("get-users", activeUsers);
   });
 
@@ -86,7 +86,7 @@ io.on("connection", (socket) => {
 
   socket.on("send-message", (data) => {
     const { receiverId } = data;
-
+    console.log(data);
     const user = activeUsers.find((user) => user.userId === receiverId);
 
     if (user) {

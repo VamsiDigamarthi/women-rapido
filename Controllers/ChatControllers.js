@@ -62,3 +62,14 @@ export const findChat = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
+export const ondeletedChat = async (req, res) => {
+  const { chatId } = req.params;
+  // console.log(chatId);
+  try {
+    await ChatModel.deleteOne({ _id: chatId });
+    return res.status(200).json("Chat deleted successfully");
+  } catch (error) {
+    return res.status(500).json({ message: "Chat deleted failed..!", error });
+  }
+};
