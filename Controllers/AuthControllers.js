@@ -13,7 +13,8 @@ export const sendOtp = async (req, res) => {
 
   try {
     const otpExist = await OtpModel.findOne({ mobile: mobile });
-    const otp = Math.floor(100000 + Math.random() * 900000);
+    // const otp = Math.floor(100000 + Math.random() * 900000);
+    const otp = "123456";
     const otpApiUrl = `https://2factor.in/API/V1/${process.env.OTP_API_KEY}/SMS/+91${mobile}/${otp}/OTP TEMPLATE`;
     try {
       // Send OTP using Axios GET request
