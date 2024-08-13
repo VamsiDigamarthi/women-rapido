@@ -12,6 +12,7 @@ import UserRoute from "./Routes/UserRoute.js";
 import DeveloperRoute from "./Routes/DeveloperRoute.js";
 import ChartRoute from "./Routes/ChatRoute.js";
 import MessageRoute from "./Routes/MessageRoute.js";
+import ContactRoute from "./Routes/ContactRoute.js";
 
 const app = express();
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -67,6 +68,8 @@ app.use("/developer", DeveloperRoute);
 app.use("/chat", ChartRoute);
 
 app.use("/message", MessageRoute);
+
+app.use("/contact", ContactRoute);
 
 let activeUsers = [];
 
