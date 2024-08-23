@@ -168,6 +168,21 @@ export const onAddFavoriteOrder = async (req, res) => {
   }
 };
 
+export const onFetchAllFaviouriteOrder = async (req, res) => {
+  try {
+    const favoriteOrders = await OrderModel.find({
+      favorite: true,
+    });
+    return res.status(200).json(favoriteOrders);
+  } catch (error) {
+    console.error("favorite Order fetching Faield", error);
+    return res.status(500).json({
+      message: "favorite Order fetching Faield",
+      error: error.message,
+    });
+  }
+};
+
 export const onAddSavedOrder = async (req, res) => {
   const { orderId } = req.params;
   try {

@@ -3,6 +3,12 @@ import OtpModel from "../Modals/OtpModal.js";
 import UserModel from "../Modals/UserModal.js";
 import jwt from "jsonwebtoken";
 
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+import fs from "fs";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 // sending otp from registration
 export const sendOtp = async (req, res) => {
   const { mobile } = req.body;
@@ -179,6 +185,17 @@ export const onEditProfile = async (req, res) => {
   const profilePic = req.file ? req.file.path : null;
   // console.log(profilePic);
   try {
+    if (user.profilePic) {
+      const oldImagePath = join(__dirname, "..", user.profilePic);
+
+      fs.unlink(oldImagePath, (err) => {
+        if (err) {
+          console.log(`Failed to delete old image: ${err}`);
+        } else {
+          console.log(`Deleted old image: ${user.image}`);
+        }
+      });
+    }
     await UserModel.findByIdAndUpdate(
       { _id: user._id },
       { $set: { profilePic: profilePic, name: Name } },

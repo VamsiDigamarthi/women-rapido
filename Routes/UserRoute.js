@@ -8,6 +8,7 @@ import {
   onAddFeedBack,
   onAddSavedOrder,
   onCancelOrder,
+  onFetchAllFaviouriteOrder,
   onFetchAllOrders,
   onFetchCompletedOrder,
   onFetchOffersBanners,
@@ -69,6 +70,14 @@ router.patch(
   CheckingUser,
   ensureUserRole,
   onAddSavedOrder
+);
+
+router.get(
+  "/favourite-orders",
+  authenticateToken,
+  CheckingUser,
+  ensureUserRole,
+  onFetchAllFaviouriteOrder
 );
 
 router.get(
