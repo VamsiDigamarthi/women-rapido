@@ -109,24 +109,6 @@ export const onFetchAllOrders = async (req, res) => {
   }
 };
 
-export const onFetchRejectedOrders = async (req, res) => {
-  const { user } = req;
-  try {
-    const rejectedOrder = await OrderModel.find({
-      orderPlaceDate: req.params.currentData,
-      status: "rejected",
-      head: user._id,
-    });
-
-    return res.status(200).json(rejectedOrder);
-  } catch (error) {
-    console.error("Rejected Orders  Faield", error);
-    return res
-      .status(500)
-      .json({ message: "Rejected Orders Faield", error: error.message });
-  }
-};
-
 export const onRePlaceOrder = async (req, res) => {
   const { user } = req;
   try {
@@ -169,9 +151,11 @@ export const onAddFavoriteOrder = async (req, res) => {
 };
 
 export const onFetchAllFaviouriteOrder = async (req, res) => {
+  const { user } = req;
   try {
     const favoriteOrders = await OrderModel.find({
       favorite: true,
+      head: user._id,
     });
     return res.status(200).json(favoriteOrders);
   } catch (error) {

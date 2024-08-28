@@ -40,14 +40,6 @@ router.get(
 
 router.get("/all-order", authenticateToken, CheckingUser, onFetchAllOrders);
 
-// router.get(
-//   "/rejecte-orders/:currentDate",
-//   authenticateToken,
-//   CheckingUser,
-//   ensureUserRole,
-//   onFetchRejectedOrders
-// );
-
 router.patch(
   "/re-place-order/:orderId",
   authenticateToken,

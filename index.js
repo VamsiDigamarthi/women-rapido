@@ -4,6 +4,10 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import http from "http";
 import { Server } from "socket.io";
+import cluster from "cluster";
+import { cpus } from "os";
+const numCPUs = cpus().length;
+
 import "dotenv/config";
 import AuthRoute from "./Routes/AuthRoute.js";
 import errorHandler from "./Middlewares/errorHandle.js";
@@ -44,6 +48,25 @@ const io = new Server(server, {
     origin: "*",
   },
 });
+
+// if (cluster.isMaster) {
+//   console.log(`Master ${process.pid} is running`);
+
+//   for (let i = 0; i < numCPUs - 3; i++) {
+//     cluster.fork();
+//   }
+//   cluster.on("exit", (worker, code, signal) => {
+//     console.log(`Worker ${worker.process.pid} died`);
+//   });
+// } else {
+// mongoose
+//   .connect(`${process.env.MONGODB_URL}`)
+//   .then(() =>
+//     server.listen(process.env.PORT, () =>
+//       console.log(`Server listening on ${process.env.PORT} .....!`)
+//     )
+//   )
+//   .catch((error) => console.log(error));
 mongoose
   .connect(`${process.env.MONGODB_URL}women_rapido`)
   .then(() =>
@@ -52,6 +75,7 @@ mongoose
     )
   )
   .catch((error) => console.log(error));
+// }
 
 app.get("/", (req, res) => {
   return res.status(200).json({ message: "Welcome to Womens Rapido......!" });
