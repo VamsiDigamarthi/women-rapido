@@ -34,6 +34,7 @@ export const sendOtp = async (req, res) => {
     const otpApiUrl = `https://2factor.in/API/V1/${process.env.OTP_API_KEY}/SMS/+91${mobile}/${otp}/OTP TEMPLATE`;
     try {
       // Send OTP using Axios GET request
+      console.log("sdfghjkl");
       await axios.get(otpApiUrl);
 
       if (otpExist) {

@@ -39,6 +39,17 @@ app.use((req, res, next) => {
   next();
 });
 
+let requestCount = 0;
+
+// Custom middleware to count requests
+app.use((req, res, next) => {
+  requestCount++;
+  console.log(`Total Requests: ${requestCount}`);
+  next(); // Call the next middleware
+});
+
+console.log(requestCount);
+
 // Error Handling Middleware - should be the last middleware added
 app.use(errorHandler);
 
