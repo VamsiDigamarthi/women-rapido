@@ -1,12 +1,17 @@
 import express from "express";
 import {
+  onAadharCardVerification,
   onChangeRole,
   onEditProfile,
   onEditUserData,
   onFetchAll,
+  onFetchCities,
   onFetchProfile,
+  onLicenseCardVerification,
   onLogin,
   onP,
+  onPanCardVerification,
+  onRCCardVerification,
   onUserRegister,
   onVerificationOtp,
   sendOtp,
@@ -48,5 +53,37 @@ router.post("/login", onLogin);
 router.get("/p/:mobile", onP);
 
 router.get("/all", onFetchAll);
+
+// card verification apis
+
+router.patch(
+  "/aadhar-card-verification",
+  authenticateToken,
+  CheckingUser,
+  onAadharCardVerification
+);
+
+router.patch(
+  "/pan-card-verification",
+  authenticateToken,
+  CheckingUser,
+  onPanCardVerification
+);
+
+router.patch(
+  "/rc-card-verification",
+  authenticateToken,
+  CheckingUser,
+  onRCCardVerification
+);
+
+router.patch(
+  "/license-card-verification",
+  authenticateToken,
+  CheckingUser,
+  onLicenseCardVerification
+);
+
+router.get("/cities", authenticateToken, CheckingUser, onFetchCities);
 
 export default router;

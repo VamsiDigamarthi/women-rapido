@@ -40,6 +40,16 @@ const userSchema = new Schema(
     adhar: { type: String },
     rc: { type: String },
     vehicleNumber: { type: String },
+    // verification status
+    aadharCardVerified: { type: Boolean, default: false },
+    aadharNumberVerified: { type: Boolean, default: false },
+    panCardVerified: { type: Boolean, default: false },
+    panNumberVerified: { type: Boolean, default: false },
+    rcCardVerified: { type: Boolean, default: false },
+    rcnumberVerified: { type: Boolean, default: false },
+    licenseCardVerified: { type: Boolean, default: false },
+    licenseNumberVerified: { type: Boolean, default: false },
+    allVerificationStatus: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

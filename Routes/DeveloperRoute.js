@@ -4,6 +4,7 @@ import { authenticateToken } from "../Middlewares/AuthMiddleware.js";
 import { CheckingUser } from "../Middlewares/CheckingUser.js";
 import { ensureDeveloperRole } from "../Middlewares/DeveloperMiddleware.js";
 import {
+  onAddCities,
   onDeleteAllOrders,
   onDeleteOneCaptaine,
   onDeleteUser,
@@ -61,5 +62,15 @@ router.patch(
 );
 
 router.patch("/delete-user", onDeleteUser);
+
+// add cities
+
+router.post(
+  "/add-cities",
+  authenticateToken,
+  CheckingUser,
+  ensureDeveloperRole,
+  onAddCities
+);
 
 export default router;

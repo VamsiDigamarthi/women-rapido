@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import fs from "fs";
+import CitiesModel from "../Modals/CitiesModal.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -273,6 +274,194 @@ export const onFetchAll = async (req, res) => {
     console.log(error);
     return res.status(500).json({
       message: "Edit-profile  failed..!",
+      error: error.message,
+    });
+  }
+};
+
+export const onAadharCardVerification = async (req, res) => {
+  const { user } = req;
+  const { aadharCardVerified, aadharNumberVerified } = req.body;
+
+  // Create an update object dynamically based on the request body
+  const updateFields = {};
+  if (aadharCardVerified !== undefined) {
+    updateFields.aadharCardVerified = aadharCardVerified;
+  }
+  if (aadharNumberVerified !== undefined) {
+    updateFields.aadharNumberVerified = aadharNumberVerified;
+  }
+
+  try {
+    if (Object.keys(updateFields).length === 0) {
+      return res.status(400).json({ message: "No fields to update" });
+    }
+
+    await UserModel.findByIdAndUpdate(
+      user._id,
+      {
+        $set: updateFields,
+      },
+      { new: true }
+    );
+
+    return res
+      .status(200)
+      .json({ message: "Aadhar details updated successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Edit-profile failed..!",
+      error: error.message,
+    });
+  }
+};
+
+export const onPanCardVerification = async (req, res) => {
+  const { user } = req;
+  const { panCardVerified, panNumberVerified } = req.body;
+
+  // Create an update object dynamically based on the request body
+  const updateFields = {};
+  if (panCardVerified !== undefined) {
+    updateFields.panCardVerified = panCardVerified;
+  }
+  if (panNumberVerified !== undefined) {
+    updateFields.panNumberVerified = panNumberVerified;
+  }
+
+  try {
+    if (Object.keys(updateFields).length === 0) {
+      return res.status(400).json({ message: "No fields to update" });
+    }
+
+    await UserModel.findByIdAndUpdate(
+      user._id,
+      {
+        $set: updateFields,
+      },
+      { new: true }
+    );
+
+    return res
+      .status(200)
+      .json({ message: "Pan details updated successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Edit-profile failed..!",
+      error: error.message,
+    });
+  }
+};
+
+export const onRCCardVerification = async (req, res) => {
+  const { user } = req;
+  const { rcCardVerified, rcnumberVerified } = req.body;
+
+  // Create an update object dynamically based on the request body
+  const updateFields = {};
+  if (rcCardVerified !== undefined) {
+    updateFields.rcCardVerified = rcCardVerified;
+  }
+  if (rcnumberVerified !== undefined) {
+    updateFields.rcnumberVerified = rcnumberVerified;
+  }
+
+  try {
+    if (Object.keys(updateFields).length === 0) {
+      return res.status(400).json({ message: "No fields to update" });
+    }
+
+    await UserModel.findByIdAndUpdate(
+      user._id,
+      {
+        $set: updateFields,
+      },
+      { new: true }
+    );
+
+    return res.status(200).json({ message: "RC details updated successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Edit-profile failed..!",
+      error: error.message,
+    });
+  }
+};
+
+export const onLicenseCardVerification = async (req, res) => {
+  const { user } = req;
+  const { licenseCardVerified, licenseNumberVerified } = req.body;
+
+  // Create an update object dynamically based on the request body
+  const updateFields = {};
+  if (licenseCardVerified !== undefined) {
+    updateFields.licenseCardVerified = licenseCardVerified;
+  }
+  if (licenseNumberVerified !== undefined) {
+    updateFields.licenseNumberVerified = licenseNumberVerified;
+  }
+
+  try {
+    if (Object.keys(updateFields).length === 0) {
+      return res.status(400).json({ message: "No fields to update" });
+    }
+
+    await UserModel.findByIdAndUpdate(
+      user._id,
+      {
+        $set: updateFields,
+      },
+      { new: true }
+    );
+
+    return res
+      .status(200)
+      .json({ message: "License details updated successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Edit-profile failed..!",
+      error: error.message,
+    });
+  }
+};
+
+export const onAllCardVerificationStatus = async (req, res) => {
+  const { user } = req;
+  const { allVerificationStatus } = req.body;
+  try {
+    await UserModel.findByIdAndUpdate(
+      user._id,
+      {
+        $set: { allVerificationStatus: allVerificationStatus },
+      },
+      { new: true }
+    );
+    return res
+      .status(200)
+      .json({ message: "All card verification status updated successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Edit-profile failed..!",
+      error: error.message,
+    });
+  }
+};
+
+export const onFetchCities = async (req, res) => {
+  try {
+    const cities = await CitiesModel.find({}).select(
+      "-createdAt -updatedAt -__v"
+    );
+    return res.status(200).json(cities);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Edit-profile failed..!",
       error: error.message,
     });
   }

@@ -1,5 +1,6 @@
 import BannersModel from "../Modals/BannerModal.js";
 import BannerOffersModel from "../Modals/BannerOffersModal.js";
+import CitiesModel from "../Modals/CitiesModal.js";
 import OrderModel from "../Modals/OrderModal.js";
 import UserModel from "../Modals/UserModal.js";
 
@@ -112,5 +113,24 @@ export const onDeleteUser = async (req, res) => {
     return res
       .status(500)
       .json({ message: "Holding Captaine failed", error: error.message });
+  }
+};
+
+export const onAddCities = async (req, res) => {
+  try {
+    const docs = {
+      cities: req.body,
+    };
+
+    const citi = new CitiesModel(docs);
+
+    await citi.save();
+
+    return res.status(200).json({ message: "Cities added successfully...!" });
+  } catch (error) {
+    console.error("Add Cities Failed", error);
+    return res
+      .status(500)
+      .json({ message: "Add Cities Failed", error: error.message });
   }
 };
