@@ -1,6 +1,7 @@
 import FeedbackModel from "../Modals/FeedbackModal.js";
 import OrderModel from "../Modals/OrderModal.js";
 import BannerOffersModel from "../Modals/BannerOffersModal.js";
+import UserModel from "../Modals/UserModal.js";
 
 export const onPlaceOrder = async (req, res) => {
   const { user } = req;
@@ -305,5 +306,34 @@ export const onFetchOffersBanners = async (req, res) => {
     return res
       .status(500)
       .json({ message: "Holding Captaine failed", error: error.message });
+  }
+};
+
+export const onLocationBasedCaptain = async (req, res) => {
+  const { latitude, longitude } = req.params;
+  const { user } = req;
+  try {
+    const captains = await UserModel.find({
+      $and: [
+        {
+          captainLocation: {
+            $near: {
+              $geometry: {
+                type: "Point",
+                coordinates: [longitude, latitude],
+              },
+              $maxDistance: 3000, // 10 km
+            },
+          },
+        },
+        { onDuty: true },
+      ],
+    }).select("captainLocation");
+    return res.status(200).json(captains);
+  } catch (error) {
+    console.error("Location Based Captain failed", error);
+    return res
+      .status(500)
+      .json({ message: "Location Based Captain failed", error: error.message });
   }
 };

@@ -70,22 +70,22 @@ const io = new Server(server, {
 //     console.log(`Worker ${worker.process.pid} died`);
 //   });
 // } else {
-// mongoose
-//   .connect(`${process.env.MONGODB_URL}`)
-//   .then(() =>
-//     server.listen(process.env.PORT, () =>
-//       console.log(`Server listening on ${process.env.PORT} .....!`)
-//     )
-//   )
-//   .catch((error) => console.log(error));
 mongoose
-  .connect(`${process.env.MONGODB_URL}women_rapido`)
+  .connect(`${process.env.MONGODB_URL}`)
   .then(() =>
     server.listen(process.env.PORT, () =>
       console.log(`Server listening on ${process.env.PORT} .....!`)
     )
   )
   .catch((error) => console.log(error));
+// mongoose
+//   .connect(`${process.env.MONGODB_URL}women_rapido`)
+//   .then(() =>
+//     server.listen(process.env.PORT, () =>
+//       console.log(`Server listening on ${process.env.PORT} .....!`)
+//     )
+//   )
+//   .catch((error) => console.log(error));
 // }
 
 app.get("/", (req, res) => {

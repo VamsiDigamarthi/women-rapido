@@ -158,25 +158,26 @@ export const onFetchAllCompletedOrders = async (req, res) => {
     });
   }
 };
-
 export const onUploadSecuritiesImages = async (req, res) => {
   const { license, pan, adhar, rc, authenticationImage } = req.files;
   const { user } = req;
-  // console.log(license);
+
+  // Prepare an object to hold the updates
+  const updateFields = {};
+
+  // Conditionally add fields to the update object if they are present
+  if (license) updateFields.license = license[0].path;
+  if (pan) updateFields.pan = pan[0].path;
+  if (adhar) updateFields.adhar = adhar[0].path;
+  if (rc) updateFields.rc = rc[0].path;
+  if (authenticationImage)
+    updateFields.authenticationImage = authenticationImage[0].path;
+
   try {
+    // Update only the fields present in the updateFields object
     const updatedUser = await UserModel.findByIdAndUpdate(
       user._id,
-      {
-        $set: {
-          license: license ? license[0].path : null,
-          pan: pan ? pan[0].path : null,
-          rc: rc ? rc[0].path : null,
-          adhar: adhar ? adhar[0].path : null,
-          authenticationImage: authenticationImage
-            ? authenticationImage[0].path
-            : null,
-        },
-      },
+      { $set: updateFields },
       { new: true }
     );
 
@@ -191,7 +192,7 @@ export const onUploadSecuritiesImages = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: "Edit-profile  failed..!",
+      message: "Edit-profile failed..!",
       error: error.message,
     });
   }
@@ -233,6 +234,37 @@ export const onIsRideStartNaviage = async (req, res) => {
     console.log(error);
     return res.status(500).json({
       message: "onrideSratnavigation  failed..!",
+      error: error.message,
+    });
+  }
+};
+
+export const onCaptainLocationTracking = async (req, res) => {
+  const { longitude, latitude } = req.body;
+  const { user } = req;
+  try {
+    const updatedCaptain = await UserModel.findByIdAndUpdate(
+      user._id, // assuming 'user._id' is the captain's ID
+      {
+        $set: {
+          "captainLocation.type": "Point",
+          "captainLocation.coordinates": [longitude, latitude],
+        },
+      },
+      { new: true } // return the updated document
+    );
+
+    if (!updatedCaptain) {
+      return res.status(404).json({ message: "Captain not found" });
+    }
+
+    return res
+      .status(201)
+      .json({ message: "captain location updated successfully" });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: "captain location added failed..!",
       error: error.message,
     });
   }

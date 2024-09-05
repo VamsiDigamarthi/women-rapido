@@ -3,6 +3,7 @@ import { authenticateToken } from "../Middlewares/AuthMiddleware.js";
 import {
   onAcceptOrder,
   onCaptaineGiveRatingToRide,
+  onCaptainLocationTracking,
   onDuttyChange,
   onFetchAllCompletedOrders,
   onFetchAllOrders,
@@ -95,6 +96,14 @@ router.patch(
   CheckingUser,
   ensureCaptainRole,
   onCaptaineGiveRatingToRide
+);
+
+router.patch(
+  "/location-tracking",
+  authenticateToken,
+  CheckingUser,
+  ensureCaptainRole,
+  onCaptainLocationTracking
 );
 
 export default router;

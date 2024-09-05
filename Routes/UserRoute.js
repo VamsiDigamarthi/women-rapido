@@ -12,6 +12,7 @@ import {
   onFetchAllOrders,
   onFetchCompletedOrder,
   onFetchOffersBanners,
+  onLocationBasedCaptain,
   onPlaceOrder,
   onRePlaceOrder,
   onSavedOrdersFetch,
@@ -121,6 +122,16 @@ router.get(
   CheckingUser,
   ensureUserRole,
   onFetchOffersBanners
+);
+
+// location based captain displays
+
+router.get(
+  "/location-based-captain/:longitude/:latitude",
+  authenticateToken,
+  CheckingUser,
+  ensureUserRole,
+  onLocationBasedCaptain
 );
 
 export default router;

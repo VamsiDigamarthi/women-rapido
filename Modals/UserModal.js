@@ -50,6 +50,16 @@ const userSchema = new Schema(
     licenseCardVerified: { type: Boolean, default: false },
     licenseNumberVerified: { type: Boolean, default: false },
     allVerificationStatus: { type: Boolean, default: false },
+    // captain location tracking to display the map
+    captainLocation: {
+      type: {
+        type: String,
+        enum: ["Point"],
+      },
+      coordinates: {
+        type: [Number],
+      },
+    },
   },
   { timestamps: true }
 );
