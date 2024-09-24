@@ -5,6 +5,7 @@ export const onDuttyChange = async (req, res) => {
   const { user } = req;
   const { file } = req;
   const captainLiveImage = file ? file.path : null;
+  console.log("change dutty Api hit...!");
   try {
     if (captainLiveImage) {
       // If captainLiveImage is present, update both onDuty and captainLiveImage
@@ -30,6 +31,7 @@ export const onDuttyChange = async (req, res) => {
 
 export const onFetchAllOrders = async (req, res) => {
   const { user } = req;
+  console.log("onFetchAllOrders", user);
   try {
     const { longitude, latitude, distance, currentData } = req.params;
     let meters = parseInt(distance) * 1000;
@@ -50,6 +52,7 @@ export const onFetchAllOrders = async (req, res) => {
       rejectedCaptaine: { $nin: [user._id] },
       // status: { $in: ["pending", "rejected"] },
     });
+    console.log(orders);
 
     return res.status(200).json(orders);
   } catch (error) {

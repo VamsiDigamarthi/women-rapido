@@ -105,7 +105,7 @@ export const onVerificationOtp = async (req, res) => {
 
 // user registration
 export const onUserRegister = async (req, res) => {
-  const { name, gender, mobile, role, termsAndCondition, vehicleNumber } =
+  const { name, gender, mobile, role, termsAndCondition, vehicleNumber, dateOfBirth, email } =
     req.body;
   const authenticationImage = req.file ? req.file.path : null;
   try {
@@ -122,6 +122,8 @@ export const onUserRegister = async (req, res) => {
       authenticationImage,
       termsAndCondition,
       vehicleNumber,
+      email, 
+      dateOfBirth
     });
 
     await user.save();
@@ -191,11 +193,16 @@ export const onLogin = async (req, res) => {
 
 export const onEditProfile = async (req, res) => {
   const { user } = req;
-  const { Name } = req.body;
+  const { Name, email, dateOfBirth } = req.body;
   // const { name } = req.body;
   // console.log(Name);
+  const updateData = {}
+  if (Name) updateData.name = Name;
+  if (email) updateData.email = email;
+  if (dateOfBirth) updateData.dateOfBirth = dateOfBirth;
   const profilePic = req.file ? req.file.path : null;
   // console.log(profilePic);
+  if (profilePic) updateData.profilePic = profilePic;
   try {
     if (user.profilePic) {
       const oldImagePath = join(__dirname, "..", user.profilePic);
@@ -210,7 +217,7 @@ export const onEditProfile = async (req, res) => {
     }
     await UserModel.findByIdAndUpdate(
       { _id: user._id },
-      { $set: { profilePic: profilePic, name: Name } },
+      { $set: updateData },
       { new: true }
     );
 
@@ -228,11 +235,16 @@ export const onEditProfile = async (req, res) => {
 
 export const onEditUserData = async (req, res) => {
   const { user } = req;
-  const { name } = req.body;
+  const { name, email, dateOfBirth } = req.body;
+  const updateData = {}
+  if (name) updateData.name = name;
+  if (email) updateData.email = email;
+  if (dateOfBirth) updateData.dateOfBirth = dateOfBirth;
+
   try {
     await UserModel.findByIdAndUpdate(
       { _id: user._id },
-      { $set: { name: name } },
+      { $set: updateData },
       { new: true }
     );
 

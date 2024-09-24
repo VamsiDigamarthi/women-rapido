@@ -17,6 +17,9 @@ import DeveloperRoute from "./Routes/DeveloperRoute.js";
 import ChartRoute from "./Routes/ChatRoute.js";
 import MessageRoute from "./Routes/MessageRoute.js";
 import ContactRoute from "./Routes/ContactRoute.js";
+import UserModel from "./Modals/UserModal.js";
+import PDFRoute from './Routes/PdfRoute.js'
+
 
 const app = express();
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -105,6 +108,21 @@ app.use("/chat", ChartRoute);
 app.use("/message", MessageRoute);
 
 app.use("/contact", ContactRoute);
+app.use("/pdf", PDFRoute);
+
+app.delete("/account-delete/:mobile", async (req, res) => {
+  const { mobile } = req.params;
+  // console.log(mobile);
+  try {
+    await UserModel.deleteOne({ mobile });
+    return res.status(204).json({ message: "Account deleted successfully." });
+  } catch (error) {
+    console.error("Account deletion failed", error);
+    return res
+     .status(500)
+     .json({ message: "Failed to delete account. Please try again later." });
+  }
+});
 
 let activeUsers = [];
 

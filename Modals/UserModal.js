@@ -60,6 +60,10 @@ const userSchema = new Schema(
         type: [Number],
       },
     },
+    // 24-09-24
+    dateOfBirth: { type : String},
+    email: { type : String },
+    signUpDateAndTime : { type : Date, default : Date.now() },
   },
   { timestamps: true }
 );
