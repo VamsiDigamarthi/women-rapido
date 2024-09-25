@@ -31,6 +31,7 @@ export const onDuttyChange = async (req, res) => {
 
 export const onFetchAllOrders = async (req, res) => {
   const { user } = req;
+  console.log("onFetchAllOrders");
   try {
     const { longitude, latitude, distance, currentData } = req.params;
     let meters = parseInt(distance) * 1000;
@@ -51,6 +52,7 @@ export const onFetchAllOrders = async (req, res) => {
       rejectedCaptaine: { $nin: [user._id] },
       // status: { $in: ["pending", "rejected"] },
     });
+    console.log(orders);
 
     return res.status(200).json(orders);
   } catch (error) {
@@ -249,7 +251,7 @@ export const onCaptainLocationTracking = async (req, res) => {
       {
         $set: {
           "captainLocation.type": "Point",
-          "captainLocation.coordinates": [longitude, latitude],
+          "captainLocation.coordinates": [parseFloat(longitude), parseFloat(latitude)],
         },
       },
       { new: true } // return the updated document

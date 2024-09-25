@@ -64,7 +64,8 @@ const userSchema = new Schema(
     dateOfBirth: { type : String},
     email: { type : String },
     signUpDateAndTime : { type : Date, default : Date.now() },
-    uniqueKey : { type : String, }
+    uniqueKey : { type : String, },
+    address : { type : String}
   },
   { timestamps: true }
 );

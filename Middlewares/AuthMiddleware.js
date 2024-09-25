@@ -6,7 +6,7 @@ export const authenticateToken = (req, res, next) => {
   const authHeader = req.headers["authorization"];
   if (authHeader !== undefined) {
     jwtToken = authHeader.split(" ")[1];
-    // console.log(jwtToken);
+    console.log(jwtToken);
   }
   if (jwtToken === undefined) {
     res.status(401).json({ message: "Invalid JWT Token" });

@@ -115,6 +115,9 @@ export const onUserRegister = async (req, res) => {
     dateOfBirth,
     email,
     uniqueKey,
+    longitude,
+    latitude,
+    address
   } = req.body;
   const authenticationImage = req.file ? req.file.path : null;
   try {
@@ -134,6 +137,11 @@ export const onUserRegister = async (req, res) => {
       email,
       dateOfBirth,
       uniqueKey,
+      address,
+      captainLocation: {
+        type: 'Point',
+        coordinates: [parseFloat(longitude), parseFloat(latitude)], // Store longitude and latitude in [longitude, latitude] format
+      },
     });
 
     await user.save();
@@ -203,13 +211,14 @@ export const onLogin = async (req, res) => {
 
 export const onEditProfile = async (req, res) => {
   const { user } = req;
-  const { Name, email, dateOfBirth } = req.body;
+  const { Name, email, dateOfBirth, address } = req.body;
   // const { name } = req.body;
   // console.log(Name);
   const updateData = {};
   if (Name) updateData.name = Name;
   if (email) updateData.email = email;
   if (dateOfBirth) updateData.dateOfBirth = dateOfBirth;
+  if (address) updateData.address = address;
   const profilePic = req.file ? req.file.path : null;
   // console.log(profilePic);
   if (profilePic) updateData.profilePic = profilePic;
@@ -245,11 +254,12 @@ export const onEditProfile = async (req, res) => {
 
 export const onEditUserData = async (req, res) => {
   const { user } = req;
-  const { name, email, dateOfBirth } = req.body;
+  const { name, email, dateOfBirth, address } = req.body;
   const updateData = {};
   if (name) updateData.name = name;
   if (email) updateData.email = email;
   if (dateOfBirth) updateData.dateOfBirth = dateOfBirth;
+  if (address) updateData.address = address;
 
   try {
     await UserModel.findByIdAndUpdate(

@@ -15,6 +15,8 @@ import {
 import { CheckingUser } from "../Middlewares/CheckingUser.js";
 import { ensureCaptainRole } from "../Middlewares/CaptaineMiddleware.js";
 import upload from "../Middlewares/fileUpload.js";
+import UserModel from "../Modals/UserModal.js";
+import OrderModel from "../Modals/OrderModal.js";
 
 const router = express.Router();
 
@@ -27,12 +29,52 @@ router.patch(
   onDuttyChange
 );
 
+// router.get(
+//   "/orders/:longitude/:latitude/:distance/:currentData",
+//   authenticateToken,
+//   CheckingUser,
+//   ensureCaptainRole,
+//   onFetchAllOrders
+// );
+
 router.get(
   "/orders/:longitude/:latitude/:distance/:currentData",
   authenticateToken,
-  CheckingUser,
-  ensureCaptainRole,
-  onFetchAllOrders
+  // CheckingUser,
+  async (req, res) => {
+    const { mobile } = req;
+    const existingUser = await UserModel.findOne({ mobile });
+    console.log("onFetchAllOrders");
+    try {
+      const { longitude, latitude, distance, currentData } = req.params;
+      let meters = parseInt(distance) * 1000;
+
+      const orders = await OrderModel.find({
+        pickup: {
+          $near: {
+            $geometry: {
+              type: "Point",
+              coordinates: [parseFloat(longitude), parseFloat(latitude)],
+            },
+            $maxDistance: meters,
+            $minDistance: 0,
+          },
+        },
+        orderPlaceDate: currentData,
+        status: "pending",
+        rejectedCaptaine: { $nin: [existingUser._id] },
+        // status: { $in: ["pending", "rejected"] },
+      });
+      console.log(orders);
+
+      return res.status(200).json(orders);
+    } catch (error) {
+      console.error("All orders Faield", error);
+      return res
+        .status(500)
+        .json({ message: "All Orders Faield", error: error.message });
+    }
+  }
 );
 
 router.patch(
