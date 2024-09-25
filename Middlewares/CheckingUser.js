@@ -4,8 +4,8 @@ export const CheckingUser = async (req, res, next) => {
   const { mobile } = req;
   try {
     const existingUser = await UserModel.findOne({ mobile });
-    console.log(mobile);
-    console.log(existingUser);
+    // console.log(mobile);
+    // console.log(existingUser);
     if (!existingUser) {
       return res.status(404).json({ message: "This User No More Available" });
     }

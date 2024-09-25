@@ -105,8 +105,17 @@ export const onVerificationOtp = async (req, res) => {
 
 // user registration
 export const onUserRegister = async (req, res) => {
-  const { name, gender, mobile, role, termsAndCondition, vehicleNumber, dateOfBirth, email } =
-    req.body;
+  const {
+    name,
+    gender,
+    mobile,
+    role,
+    termsAndCondition,
+    vehicleNumber,
+    dateOfBirth,
+    email,
+    uniqueKey,
+  } = req.body;
   const authenticationImage = req.file ? req.file.path : null;
   try {
     const existingUser = await UserModel.findOne({ mobile });
@@ -122,8 +131,9 @@ export const onUserRegister = async (req, res) => {
       authenticationImage,
       termsAndCondition,
       vehicleNumber,
-      email, 
-      dateOfBirth
+      email,
+      dateOfBirth,
+      uniqueKey,
     });
 
     await user.save();
@@ -196,7 +206,7 @@ export const onEditProfile = async (req, res) => {
   const { Name, email, dateOfBirth } = req.body;
   // const { name } = req.body;
   // console.log(Name);
-  const updateData = {}
+  const updateData = {};
   if (Name) updateData.name = Name;
   if (email) updateData.email = email;
   if (dateOfBirth) updateData.dateOfBirth = dateOfBirth;
@@ -236,7 +246,7 @@ export const onEditProfile = async (req, res) => {
 export const onEditUserData = async (req, res) => {
   const { user } = req;
   const { name, email, dateOfBirth } = req.body;
-  const updateData = {}
+  const updateData = {};
   if (name) updateData.name = name;
   if (email) updateData.email = email;
   if (dateOfBirth) updateData.dateOfBirth = dateOfBirth;
